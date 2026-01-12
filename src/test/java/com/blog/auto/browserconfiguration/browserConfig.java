@@ -2,6 +2,7 @@ package com.blog.auto.browserconfiguration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
@@ -15,7 +16,11 @@ public class browserConfig {
 		String browser = configLoader.getProperty("browser");
 		switch (browser) {
 		case "chrome":
-			driver = new ChromeDriver();
+			ChromeOptions options = new ChromeOptions();
+			//options.addArguments("--headless=new");
+			options.addArguments("--no-sandbox");
+			options.addArguments("--disable-dev-shm-usage");
+			driver = new ChromeDriver(options);
 			break;
 
 		case "firefox":
