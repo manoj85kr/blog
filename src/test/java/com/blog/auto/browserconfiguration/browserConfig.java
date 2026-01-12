@@ -17,7 +17,7 @@ public class browserConfig {
 		switch (browser) {
 		case "chrome":
 			ChromeOptions options = new ChromeOptions();
-			//options.addArguments("--headless=new");
+			options.addArguments("--headless=new");
 			options.addArguments("--no-sandbox");
 			options.addArguments("--disable-dev-shm-usage");
 			driver = new ChromeDriver(options);
