@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.blog.auto.pagelocators.Alerts;
 import com.blog.auto.pagelocators.Uploads;
+import com.blog.auto.utilities.FileUtils;
 
 public class UploadsPage {
 
@@ -18,14 +19,16 @@ public class UploadsPage {
 	}
 
 	public boolean uploadSingleFile() {
-		driver.findElement(By.xpath(Uploads.getsingleUpload()))
-				.sendKeys("E:\\Automation\\auto\\src\\test\\resources\\30-Day-CSharp-Daily-Checklist.pdf");
+		File file = FileUtils.getFileFromResources("30-Day-CSharp-Daily-Checklist.pdf");
+		driver.findElement(By.xpath(Uploads.getsingleUpload())).sendKeys(file.getAbsolutePath());
 		return true;
 	}
 
 	public boolean uploadMultipleFile() {
-		driver.findElement(By.xpath(Uploads.getmultileUploads())).sendKeys(
-				"E:\\Automation\\auto\\src\\test\\resources\\30-Day-CSharp-Daily-Checklist.pdf\nE:\\Automation\\auto\\src\\test\\resources\\K.R.MANOJ  Lead Software Quality Assurance  13 years Experience In Automation  Selenium  Java  API.pdf");
+		File file1 = FileUtils.getFileFromResources("30-Day-CSharp-Daily-Checklist.pdf");
+		File file2 = FileUtils.getFileFromResources("AnotherFile.pdf");
+		String files = file1.getAbsolutePath() + "\n" + file2.getAbsolutePath();
+		driver.findElement(By.xpath(Uploads.getmultileUploads())).sendKeys(files);
 		return true;
 	}
 }
