@@ -11,6 +11,7 @@
       <class name="com.blog.auto.testscripts.UploadsTest"/>
       <class name="com.blog.auto.testscripts.DownloadTest"/>
       <class name="com.blog.auto.testscripts.AlertsTest"/>
+      <class name="com.blog.auto.testscripts.Dropdowns"/>
     </classes>
   </test>
 
