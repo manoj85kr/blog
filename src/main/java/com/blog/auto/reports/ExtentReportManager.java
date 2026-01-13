@@ -1,5 +1,7 @@
 package com.blog.auto.reports;
 
+import java.io.File;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
@@ -10,8 +12,11 @@ public class ExtentReportManager {
 	public static ExtentReports getExtentReport() {
 
 		if (extent == null) {
-			ExtentSparkReporter spark = new ExtentSparkReporter(
-					System.getProperty("user.dir") + "/test-output/ExtentReport.html");
+			String reportPath = System.getProperty("user.dir")
+			        + File.separator + "test-output"
+			        + File.separator + "ExtentReport.html";
+
+			ExtentSparkReporter spark = new ExtentSparkReporter(reportPath);
 
 			spark.config().setReportName("Automation Test Report");
 			spark.config().setDocumentTitle("Extent Report");

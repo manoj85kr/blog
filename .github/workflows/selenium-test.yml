@@ -41,3 +41,11 @@ jobs:
       with:
         name: Extent-Report
         path: test-output/ExtentReport.html
+
+    - name: List test-output folder
+      if: always()
+      run: |
+        echo "Current directory:"
+        pwd
+        echo "Listing files:"
+        ls -R
