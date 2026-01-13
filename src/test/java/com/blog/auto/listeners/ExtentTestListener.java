@@ -1,16 +1,28 @@
 package com.blog.auto.listeners;
 
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.blog.auto.initialization.setUpIntialization;
 import com.blog.auto.reports.ExtentReportManager;
+import com.blog.auto.utilities.HelperUtilities;
 
 public class ExtentTestListener implements ITestListener {
 
+	setUpIntialization si = new setUpIntialization();
+
 	ExtentReports extent = ExtentReportManager.getExtentReport();
 	private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
+	HelperUtilities help = new HelperUtilities();
 
 	@Override
 	public void onTestStart(ITestResult result) {
@@ -26,6 +38,12 @@ public class ExtentTestListener implements ITestListener {
 	@Override
 	public void onTestFailure(ITestResult result) {
 		test.get().fail(result.getThrowable());
+		try {
+			setUpIntialization.captureScreenshot(result.getMethod().getMethodName());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
