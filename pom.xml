@@ -12,7 +12,7 @@
 		<maven.compiler.target>21</maven.compiler.target>
 		<selenium.version>4.18.1</selenium.version>
 		<testng.version>7.7.1</testng.version>
-		<extentreports.version>5.0.9</extentreports.version>
+		<extentreports.version>5.1.1</extentreports.version>
 		<webdrivermanager.version>5.6.3</webdrivermanager.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
