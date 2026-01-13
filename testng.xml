@@ -10,6 +10,7 @@
       <class name="com.blog.auto.testscripts.DownloadTest"/>
       <class name="com.blog.auto.testscripts.AlertsTest"/>
       <class name="com.blog.auto.testscripts.DropDownTest"/>
+      <class name="com.blog.auto.testscripts.StaticWebPageTest" />
     </classes>
   </test>
 
