@@ -20,11 +20,10 @@ public class browserConfig {
 		switch (browser) {
 		case "chrome":
 			Map<String, Object> prefs = new HashMap<>();
-			prefs.put("download.default_directory",
-			        System.getProperty("user.dir") + "/target/downloads");
+			prefs.put("download.default_directory", System.getProperty("user.dir") + "/target/downloads");
 			prefs.put("download.prompt_for_download", false);
 			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--headless=new");
+			// options.addArguments("--headless=new");
 			options.addArguments("--no-sandbox");
 			options.addArguments("--disable-dev-shm-usage");
 			options.setExperimentalOption("prefs", prefs);

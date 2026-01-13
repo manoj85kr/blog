@@ -1,4 +1,4 @@
-package com.blog.auto.utilities;
+package com.blog.auto.fileutilities;
 
 import java.io.File;
 import java.io.InputStream;

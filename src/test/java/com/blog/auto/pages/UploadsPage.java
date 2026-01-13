@@ -6,9 +6,9 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.blog.auto.fileutilities.FileUtils;
 import com.blog.auto.pagelocators.Alerts;
 import com.blog.auto.pagelocators.Uploads;
-import com.blog.auto.utilities.FileUtils;
 
 public class UploadsPage {
 
