@@ -1,11 +1,14 @@
-name: Selenium TestNG Tests
+name: CI Pipeline - Selenium Tests
 
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  schedule:
+    - cron: '5 * * * *'  # runs weekly on Sundays at midnight
   workflow_dispatch:   # allows manual run
+
 
 jobs:
   run-tests:
@@ -29,5 +32,5 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-maven-
 
-    - name: Run TestNG Tests
+    - name: Build with Maven
       run: mvn clean test
