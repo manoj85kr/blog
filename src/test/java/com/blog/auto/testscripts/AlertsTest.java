@@ -7,38 +7,43 @@ import com.blog.auto.pages.AlertsPage;
 
 public class AlertsTest extends setUpIntialization {
 
-	@Test
+	@Test(groups = { "sanity", "common" }, alwaysRun = true)
 	public void toVerifyClickActionOnAlerts() {
 		AlertsPage ap = new AlertsPage(driver);
 		boolean status = ap.clickAlerts();
 		Assert.assertTrue(status);
 	}
 
-	@Test
+	@Test(groups = { "sanity", "common" })
 	public void toVerifyConfirmActionOnAlerts() {
 		AlertsPage ap = new AlertsPage(driver);
 		boolean status = ap.confirmAlerts();
 		Assert.assertTrue(status);
 	}
 
-	@Test
+	@Test(groups = { "sanity", "common" })
 	public void toVerifyPromptActionOnAlerts() throws InterruptedException {
 		AlertsPage ap = new AlertsPage(driver);
 		String status = ap.promptAlerts();
 		Assert.assertEquals(status, "Hello Manoj! How are you today?");
 	}
 
-	@Test
+	@Test(groups = { "sanity", "common" })
 	public void switchTabs() throws InterruptedException {
 		AlertsPage ap = new AlertsPage(driver);
 		String status = ap.switchTabs();
 		Assert.assertEquals(status, "Automation Testing Practice");
 	}
 
-	@Test
+	@Test(groups = { "sanity", "common", "Test" })
 	public void switchPopWindows() throws InterruptedException {
 		AlertsPage ap = new AlertsPage(driver);
 		String status = ap.switchTabs();
 		Assert.assertEquals(status, "Automation Testing Practice");
+	}
+
+	@Test(dependsOnGroups = "Test")
+	public void dependsOn() {
+		System.out.println("Ran after the group");
 	}
 }

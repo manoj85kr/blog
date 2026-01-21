@@ -10,21 +10,21 @@ import com.blog.auto.pages.DownloadPage;
 import com.blog.auto.pages.DropdownPage;
 
 public class DropDownTest extends setUpIntialization {
-	@Test
+	@Test(groups = { "regression","common" })
 	public void toVerifyColorValuesSelectedFromDropDown() throws FileNotFoundException, InterruptedException {
 		DropdownPage dp = new DropdownPage(driver);
 		boolean status = dp.selectColorFromTheDropDown();
 		Assert.assertTrue(status);
 	}
 
-	@Test
+	@Test(groups = { "regression","common" })
 	public void toVerifyAnimalsValuesSelectedFromDropDown() throws FileNotFoundException, InterruptedException {
 		DropdownPage dp = new DropdownPage(driver);
 		boolean status = dp.selectAnimalsFromTheDropDown();
 		Assert.assertTrue(status);
 	}
 
-	@Test
+	@Test(groups = { "regression","common" })
 	public void toVerifyCountryValuesSelectedFromDropDown() throws FileNotFoundException, InterruptedException {
 		DropdownPage dp = new DropdownPage(driver);
 		boolean status = dp.selectCountryFromTheDropDown();

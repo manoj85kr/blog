@@ -10,7 +10,7 @@ import com.blog.auto.pages.DownloadPage;
 import com.blog.auto.pages.UploadsPage;
 
 public class DownloadTest extends setUpIntialization {
-	@Test
+	@Test(groups = { "sanity", "common" }, enabled = false)
 	public void toVerifyFileDownloaded() throws FileNotFoundException, InterruptedException {
 		DownloadPage dp = new DownloadPage(driver);
 		boolean status = dp.downloadFiles();

@@ -7,14 +7,14 @@ import com.blog.auto.initialization.setUpIntialization;
 import com.blog.auto.pages.UploadsPage;
 
 public class UploadsTest extends setUpIntialization {
-	@Test
+	@Test(groups = { "prod", "common" })
 	public void toVerifySingleUploads() {
 		UploadsPage ap = new UploadsPage(driver);
 		boolean status = ap.uploadSingleFile();
 		Assert.assertTrue(status);
 	}
 
-	@Test
+	@Test(groups = { "prod", "common" })
 	public void toVerifyMultipleUploads() {
 		UploadsPage ap = new UploadsPage(driver);
 		boolean status = ap.uploadMultipleFile();
