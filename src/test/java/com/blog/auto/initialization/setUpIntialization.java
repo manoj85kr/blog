@@ -23,10 +23,10 @@ public class setUpIntialization {
 
 	protected static WebDriver driver;
 
-	@BeforeSuite
+	//@BeforeSuite
 	// @BeforeTest
 	// @BeforeClass
-	// @BeforeMethod
+	 @BeforeMethod
 	public void browserOpen() {
 		driver = browserConfig.browserSetup();
 		driver.manage().window().maximize();
@@ -40,10 +40,10 @@ public class setUpIntialization {
 		FileUtils.copyFile(src, destination);
 	}
 
-	@AfterSuite
+	//@AfterSuite
 	// @AfterTest
 	// @AfterClass
-	// @AfterMethod
+	 @AfterMethod
 	public void browserClose() {
 		if (driver != null) {
 			driver.quit();
